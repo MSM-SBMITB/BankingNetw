@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_SUPPORT"/>
+	<classpathentry exported="true" kind="con" path="GROOVY_DSL_SUPPORT"/>
+	<classpathentry kind="con" path="REPAST_SIMPHONY_SUPPORT"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/colt.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/asm.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/beanbowl.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/commons-collections.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/geotools_repast.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/ibis.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/jakarta-poi.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/jep-2.24.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/jgap.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/jh.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/jode-1.1.2-pre1.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/joone.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/JTS.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/junit.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/log4j-1.2.8.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/OpenForecast-0.4.0.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/openmap.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/plot.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/ProActive.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/trove.jar"/>
+	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/violinstrings-1.0.2.jar"/>
+	<classpathentry kind="lib" path="D:/org.apache.servicemix.bundles.jaxp-ri-1.4.5_1-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
