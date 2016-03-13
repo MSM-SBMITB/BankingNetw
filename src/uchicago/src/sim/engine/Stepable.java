@@ -40,7 +40,7 @@ package uchicago.src.sim.engine;
 public interface Stepable {
 
   /**
-   * Executes the agent's behavoir for the current time step.
+   * Executes the agent's behavior for the current time step.
    */
   public void step();
 

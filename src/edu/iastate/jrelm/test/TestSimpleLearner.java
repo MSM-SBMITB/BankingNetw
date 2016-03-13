@@ -8,7 +8,7 @@ import edu.iastate.jrelm.rl.SimpleStatelessLearner;
 import edu.iastate.jrelm.rl.SimpleStatelessPolicy;
 import edu.iastate.jrelm.rl.rotherev.variant.VREParameters;
 import edu.iastate.jrelm.rl.rotherev.REPolicy;
-import edu.iastate.jrelm.rl.rotherev.advanced.AREParameters;
+//import edu.iastate.jrelm.rl.rotherev.advanced.AREParameters;
 import junit.framework.TestCase;
 
 import static java.lang.System.out;

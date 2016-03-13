@@ -37,8 +37,8 @@ import uchicago.src.sim.util.Random;
 import uchicago.src.sim.util.SimUtilities;
 
 /**
- * Encapsulates some simple model behavoir and hides the scheduling
- * mechansim.
+ * Encapsulates some simple model behavior and hides the scheduling
+ * mechanism.
  *
  * Every time step of the simulation, SimpleModel will executes its
  * preStep(), step() and postStep() methods. Classes that extends this
@@ -184,10 +184,11 @@ public class SimpleModel extends SimModelImpl {
   }
 
   private void autoStep() {
-    if (shuffle) SimUtilities.shuffle(agentList);
+	int size = agentList.size();
 	
-    int size = agentList.size();
-    for (int i = 0;i < size; i++) {
+	if (shuffle) SimUtilities.shuffle(agentList);
+   
+    for (int i = 0;i < size; i++) { 
       Stepable agent = (Stepable)agentList.get(i);
       agent.step();
     }

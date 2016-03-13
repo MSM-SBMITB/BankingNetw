@@ -42,7 +42,7 @@ public class BalanceSheet {
 		}
 	}
 
-	public static double[] getBalanceSheet(int x) {
+	public double[] getBalanceSheet(int x) {
 		double dats[] = { d[x], b[x], c[x], e[x], i[x] };
 		return (dats);
 	}

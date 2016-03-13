@@ -11,7 +11,7 @@ public class BankAction extends SimpleAction<Integer> {
 	 * 
 	 * @param id
 	 *            - ID for this action
-	 * @param armNumber
+	 * @param takebackLending
 	 *            - how much fraction the bank will takeback
 	 */
 	public BankAction(Integer id, Integer takebackLending) {

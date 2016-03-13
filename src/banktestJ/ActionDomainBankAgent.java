@@ -16,7 +16,7 @@ public class ActionDomainBankAgent implements ActionDomain <Integer, BankAction>
 	
 	private void initConverter(){
 		for (int i=1; i <= numberOfChoices; i++){
-			actionConverter.add(i*0.2);
+			//actionConverter.add(i*0.2);
 		}
 
 	}

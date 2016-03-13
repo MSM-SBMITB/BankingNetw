@@ -12,8 +12,29 @@ public class Main {
 	
 	static int currentBankNum;
 	
-	public static void main(String[] args) {
-		// Initialize system
+	
+
+
+	//---------------MISC FUNCTION------------------------------------------------------------------------------------------------------------------------
+	//shuffle list
+	private static ArrayList<Integer> ShuffleList(int a) {
+		for (int i=0; i<a;i++ ){
+			list.add(i);
+		}
+		Collections.shuffle(list);
+		return list;
+	}
+	
+	private static ArrayList<Boolean> passingNetwork (int a){
+		ArrayList<Boolean> pass = new ArrayList<Boolean>();
+		pass = netw.getNetwork(a);
+		return pass;
+	}
+	
+	//----------------------------------------------------------------------------------------
+	
+	
+	private static void init(){
 		netw = new Network();
 		new BalanceSheet();
 		//adding bank agents
@@ -21,7 +42,9 @@ public class Main {
 			agentList.add(new BankAgents(Constants.bsG[i][0], Constants.bsG[i][1], Constants.bsG[i][2], Constants.bsG[i][3], Constants.bsG[i][4]));
 			//agentList.getNetw(netw.getNetwork(i));
 		}
-		// run
+	}
+	
+	private static void run() {
 		for (int t=0; t<Constants.T; t++){	
 			int a = agentList.size();
 			ArrayList<Integer> sequence = ShuffleList(a);
@@ -39,19 +62,9 @@ public class Main {
 		}
 	}
 	
-	//---------------MISC FUNCTION------------------------------------------------------------------------------------------------------------------------
-	//shuffle list
-	private static ArrayList<Integer> ShuffleList(int a) {
-		for (int i=0; i<a;i++ ){
-			list.add(i);
-		}
-		Collections.shuffle(list);
-		return list;
-	}
-	
-	private static ArrayList<Boolean> passingNetwork (int a){
-		ArrayList<Boolean> pass = new ArrayList<Boolean>();
-		pass = netw.getNetwork(a);
-		return pass;
-	}
+	public static void main1(String[] args) {
+		init(); 
+		run(); 
+	}	
+		
 }

@@ -6,7 +6,7 @@ public class Constants {
 	public static final boolean systemic = true;
 	
 
-	public static final int N = 50; // number of bank
+	public static final int N = 25; // number of bank
 	
 	public static final double drift = 0.12/100;
 	public static final double volatility = 0.19/100;
