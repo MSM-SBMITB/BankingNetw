@@ -30,5 +30,7 @@
 	<classpathentry kind="lib" path="D:/agents-master/agents-master/Repast J/lib/violinstrings-1.0.2.jar"/>
 	<classpathentry kind="lib" path="D:/org.apache.servicemix.bundles.jaxp-ri-1.4.5_1-sources.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="D:/ssj-2.5.jar.zip"/>
+	<classpathentry kind="lib" path="D:/ssj-2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

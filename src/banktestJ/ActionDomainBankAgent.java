@@ -8,18 +8,10 @@ import edu.iastate.jrelm.core.ActionDomain;
 
 public class ActionDomainBankAgent implements ActionDomain <Integer, BankAction> {
 	
-	private int numberOfChoices = 5;
+	private int numberOfChoices = 10;
 	private ArrayList<BankAction> actionList;
 	private ArrayList<Integer> idList;
 	private ArrayList<Double> actionConverter;
-	
-	
-	private void initConverter(){
-		for (int i=1; i <= numberOfChoices; i++){
-			//actionConverter.add(i*0.2);
-		}
-
-	}
 	
 	public ActionDomainBankAgent(){
 		actionList = new ArrayList<BankAction>(numberOfChoices);
@@ -29,8 +21,7 @@ public class ActionDomainBankAgent implements ActionDomain <Integer, BankAction>
 			actionList.add(new BankAction(new Integer(i), new Integer(i+1)));
 			idList.add(i);
 		}
-		
-		initConverter();
+
 	}
 
 	public boolean containsAction(BankAction actionToCheck) {

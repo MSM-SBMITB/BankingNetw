@@ -424,6 +424,11 @@ public class SimpleStatelessPolicy<I, A extends Action> extends
 			// ModifiedEmpiricalWalker.NO_INTERPOLATION);
 			// eventGenerator.setState2(probDistFunction);
 			eventGenerator.setState(probDistFunction);
+			
+			
+			//TR
+			//System.out.println("SimpleStatelessPolicy.setProbability index |  "+ index + " new value | " + newValue);
+			
 		} else {
 			throw new IllegalArgumentException(
 					"Cannot set probability for action "

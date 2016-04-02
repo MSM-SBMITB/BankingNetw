@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
+import cern.colt.Arrays;
 import edu.iastate.jrelm.core.BasicLearnerManager;
 import edu.iastate.jrelm.gui.BasicSettingsEditor;
 import edu.iastate.jrelm.rl.rotherev.REParameters;
@@ -28,12 +29,9 @@ public class BankModel extends SimpleModel {
 
 	private static Network netw;
 	private static  BalanceSheet balanceSheet; 
-	private static int currentBankNum;
+	//private static int currentBankNum;
+	public static ShockMatrix Shock;
 	//private ArrayList <BankAgentsPlus> banks;
-	
-	
-	
-	
 	
 	
 	public BankModel(){
@@ -51,15 +49,17 @@ public class BankModel extends SimpleModel {
 		autoStep = true;
 		
 		bankDomain = new ActionDomainBankAgent(); 
-		bankParams =  new REParameters(100, 0.55, 500, 0.3, 8780632);
+		//bankParams =  new REParameters(100, 0.55, 500, 0.3, 8780632); //if using boltzmann dist
+		bankParams =  new REParameters(); // using proportional probability at initial
 		
 		for (int i=0; i< Constants.N; i++){
 			agentList.add(new BankAgentsPlus(bankDomain,bankParams, String.valueOf(i)));
 			agentList.get(i).addBalanceSheet(balanceSheet.getBalanceSheet(i));
-			agentList.get(i).getNetwork(netw.getNetwork(i));
+			agentList.get(i).getNetwork(netw.getBorrowerList(i), netw.getLenderList(i));
 			super.agentList = BankModel.agentList;
 		}
 		
+		//super.stoppingTime = 52; // set stopping time
 		
 		
 	}
@@ -94,16 +94,10 @@ public class BankModel extends SimpleModel {
 	}
 	
 	
-	protected void step(){
-		System.out.println("step");
-		//int fractionChoice = bank.chooseFraction();
-		//int payoff = 0; // bikin mekanisme payoffnya input pake fraction choice 
-		//bank.receivePayoff(payoff);
-		
-	}
+	protected void step(){ }// step disini ga dipake, lihat di agent
 	
 	protected void postStep(){
-		
+		super.agentList = agentList; 
 	}
 
 
@@ -115,8 +109,47 @@ public class BankModel extends SimpleModel {
 	}
 	
 	private static void init(){
-		netw = new Network();
-		balanceSheet = new BalanceSheet();
+		netw = new Network(); // create network
+		balanceSheet = new BalanceSheet(); // create balance sheet for entire bank systen
+		Shock = new ShockMatrix(); // creating matrix shock setting
+		Shock.shock = false; 
+		
+		//printArray(Constants.bsG);
+		//printArray1(Constants.nw);
+		
 	}
+	
+	//------------------------------------------misc
 
+	private static void printArray(double[][] A){
+	
+		for(int i=0; i < 5; i++){
+			for(int j=0; j< Constants.N; j++)
+			{
+				if (j==4){
+					System.out.println(A[i][j]);
+				}
+				else {
+					System.out.print(A[i][j] + " | ");
+				}
+			}
+		}
+		
+	}
+	
+	private static void printArray1(boolean[][] A){
+		
+		for(int i=0; i < Constants.N; i++){
+			for(int j=0; j< Constants.N; j++)
+			{
+				if (j==Constants.N-1){
+					System.out.println(A[i][j]);
+				}
+				else {
+					System.out.print(A[i][j] + " | ");
+				}
+			}
+		}
+		
+	}
 }

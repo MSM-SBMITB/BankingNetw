@@ -72,7 +72,7 @@ public class SimpleModel extends SimModelImpl {
   protected ArrayList agentList = new ArrayList();
   protected String name = "A Repast Model";
   protected String[] params = {""};
-  private double stoppingTime = Double.POSITIVE_INFINITY;
+  protected double stoppingTime = Double.POSITIVE_INFINITY;
   private BasicAction stoppingAction;
   protected boolean autoStep = false;
   protected boolean shuffle = false;

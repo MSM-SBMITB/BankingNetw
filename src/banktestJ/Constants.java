@@ -6,23 +6,24 @@ public class Constants {
 	public static final boolean systemic = true;
 	
 
-	public static final int N = 25; // number of bank
+	public static final int N = 20; // number of bank
 	
-	public static final double drift = 0.12/100;
-	public static final double volatility = 0.19/100;
-	public static final double dT = 1;
+	public static double drift = 0.12/100;
+	public static  double volatility = 0.19/100;
+	public static final double dT = 1.0/52.0;
 
 	public static final int E = 100000;
-	public static final double p = 0.2;
+	public static final double p = 0.4;
 
 	public static final double theta = 0.2;
 	public static final double gamma = 0.05;
+	public static final double threshold_nw = 0.03;
 
-	public static double r_b = 0.1;
-	public static double r_i = 0.1;
-	public static double r_d = 0.1;
+	public static double r_b = 0.2;
+	public static double r_i = 0.08;
+	public static double r_d = 0.0004; //per tick
 
-	public static int Z = 0;
+	public static double Z = 0.00;
 
 	public static boolean[][] nw = new boolean[N][N];
 

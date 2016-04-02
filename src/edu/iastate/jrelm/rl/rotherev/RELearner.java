@@ -220,9 +220,12 @@ public class RELearner<I, A extends Action<I>>
 	protected void updateProbabilities() {
 
 		if (getParameters().useBoltzmann()) {
+			System.out.println("RELearner. use Boltzmann");
 			generateBoltzmanProbs();
 		} else {
 			// Proportional Probability method
+			//System.out.println("RELearner. use proportional probability");
+			
 			double[] propensities = getPolicy().getPropensities();
 			double summedProps = 0.0;
 			double newProb = 0.0;
@@ -235,6 +238,9 @@ public class RELearner<I, A extends Action<I>>
 				index = actionIDList.indexOf(actID);
 				newProb = propensities[index] / summedProps;
 				getPolicy().setProbability(actID, newProb);
+				//System.out.println("RE.updateProbabilities agent no " + index + " " + newProb); // tr
+				
+				
 			}
 		}
 	}
@@ -244,7 +250,7 @@ public class RELearner<I, A extends Action<I>>
 	 * constant temperature
 	 */
 	protected void generateBoltzmanProbs() {
-		// System.out.println("RELearner.generateBoltzmannProbs()");
+		 //System.out.println("RELearner.generateBoltzmannProbs()");
 
 		// Do this because the super class will try to generate probs before
 		// the new parameters are in place. Check for policy just in case

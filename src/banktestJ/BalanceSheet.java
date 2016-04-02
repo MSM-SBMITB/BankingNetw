@@ -19,7 +19,7 @@ public class BalanceSheet {
 	private static double e_ = 0;
 
 	private static void initialize() {
-		I = E * Constants.theta / (1 - Constants.theta);
+		I = (E * Constants.theta) / (1.00 - Constants.theta);
 		w = I / Constants.Z;
 		
 		Constants.w = w;
@@ -28,6 +28,8 @@ public class BalanceSheet {
 			i[i_] = Network.inOutDegree[0][i_] * w;
 			b[i_] = Network.inOutDegree[1][i_] * w;
 			sumE = sumE + b[i_];
+			
+			//System.out.println(i[i_]+" | "+b[i_]);
 		}
 
 		e_ = (E - sumE) / N;
@@ -39,6 +41,8 @@ public class BalanceSheet {
 
 			c[i_] = gamma * a[i_];
 			d[i_] = a[i_] - c[i_] - b[i_];
+			
+			//System.out.println(e[i_]+" | "+d[i_]);
 		}
 	}
 
@@ -64,10 +68,26 @@ public class BalanceSheet {
 			}
 		}
 	}
+	
+	private static void checkValue(){
+		boolean check = true;
+		
+		for (int k = 0; k < 5; k++) {
+			for (int j = 0; j < N; j++) {
+			if(Constants.bsG[j][k]<0){if (!check){check=!check;}}
+			}}
+		if (!check){init();System.out.println("BalanceSheet | balancesheet contain negative; recalculating ");}
+	}
+	
+	public static void init(){
+		initialize();
+		putToGlobal();	
+		checkValue();
+	}
 
 	public BalanceSheet() {
-		initialize();
-		putToGlobal();
+		init();
+		
 	}
 
 }
